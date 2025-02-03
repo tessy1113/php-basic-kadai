@@ -11,28 +11,23 @@
     <?php
     function sort_2way(array &$array, bool $order): void {  
       if ($order) {
-        sort($array);  
-      } else {
+        echo "昇順にソートします。<br>";
+        sort($array);
+    } else {
+        echo "降順にソートします。<br>";
         rsort($array);
-      }
-    }
-    
-    $nums = [15, 4, 18, 23, 10];
-    
-    echo "昇順にソートします。<br>";
-    sort_2way($nums, true);
-    foreach ($nums as $num) {
-      echo $num . "<br>";
     }
 
-    echo "\n";
-    
-    echo "降順にソートします。<br>";
-    sort_2way($nums, false);
-    foreach ($nums as $num) {
-      echo $num . "<br>";
+    foreach ($array as $num) {
+        echo $num . "<br>";
     }
-    
+    echo "<br>";
+    }
+
+    $nums = [15, 4, 18, 23, 10];
+
+    sort_2way($nums, true);
+    sort_2way($nums, false);
     ?>
     </p>
 </body>
